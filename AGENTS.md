@@ -29,7 +29,7 @@ Prompt -> Context -> Harness
 ## `materials/` 编辑重点
 
 - 维持工作坊当前节奏：上午采用方案 A′，即先讲 Agent 与 Prompt / Context / Harness，再做环境验证，最后进入串联案例；课前完成安装，课上只验证和切换。
-- 核心工具表述保持一致：OpenCode + 国内模型供应商（阿里百炼 / DeepSeek / OpenAI-compatible API）；Claude Code 作为讲师演示、对照工具和进阶选项保留。
+- 核心工具表述保持一致：OpenCode 与 Claude Code 都属于终端 Agent 工具；中国课堂建议以 OpenCode + 国内模型供应商（阿里百炼 / DeepSeek / OpenAI-compatible API）作为统一基线，同时保留 Claude Code 作为等价可选路径和讲师演示工具。
 - 三要素定义保持统一：
   - Prompt：结构化任务指令书，回答“要做什么、给谁看、输出什么格式”。
   - Context：Agent 的视野和记忆，重点区分外部、对话、系统、工具四类。

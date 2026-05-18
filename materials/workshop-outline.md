@@ -2,8 +2,8 @@
 
 > **适用对象**：中欧商学院MBA（偏产业与金融背景）
 > **总时长**：约7小时（含休息与午餐）
-> **核心工具**：OpenCode + 国内模型供应商（阿里百炼 / DeepSeek / OpenAI-compatible API）
-> **对照工具**：Claude Code（讲师演示 / 进阶选项）
+> **核心工具**：OpenCode / Claude Code（二选一即可完成课堂任务）
+> **推荐课堂基线**：OpenCode + 国内模型供应商（阿里百炼 / DeepSeek / OpenAI-compatible API）
 > **核心理念**：Agent 是杠杆，不是替代；Prompt-Context-Harness 是驾驭 Agent 的三要素
 
 ### 上午教学法：方案 A′
@@ -12,7 +12,7 @@
 
 | 原则 | 说明 |
 |------|------|
-| 课前装环境 | OpenCode、模型供应商 API Key 和 Provider 配置 **必须在课前完成**；课上环境段只做验证与最小任务 |
+| 课前装环境 | 至少完成一种终端 Agent 配置：推荐 OpenCode + 国内 Provider；已有稳定 Claude Code 的学员也可使用 Claude Code |
 | 上午前半段 | P/C/H 以讲师大屏对比为主；每模块末尾 **5 分钟口头/网页跟练**（不必开终端） |
 | Context 分段 | 上午只讲**外部 + 对话**两类；**项目规则文件 / MCP** 挪到环境段演示 |
 | 上午后半段 | 环境 ≤20 分钟 → 两个案例各 30 分钟，**学员在自己电脑上同步跟做** |
@@ -29,13 +29,13 @@
 | 09:50-10:20 | 三要素：Context | 外部 + 对话两类；"给不给背景"对比；**学员跟练 5min** | 30min |
 | 10:20-10:50 | 三要素：Harness | 四种约束；有/无 Harness 对比；**学员跟练 5min** | 30min |
 | 10:50-11:05 | **休息** | | 15min |
-| 11:05-11:25 | 环境与工具链 | **仅验证** OpenCode 与模型响应；项目规则文件 / MCP 简介；不做首次安装 | 20min |
+| 11:05-11:25 | 环境与工具链 | **仅验证**终端 Agent 与模型响应；项目规则文件 / MCP 简介；不做首次安装 | 20min |
 | 11:25-11:55 | 演示案例1：市场调研 | 全员跟做：P → C → H → 输出校验 | 30min |
 | 11:55-12:25 | 演示案例2：财报解读 | 全员跟做：**翻车 → 纠正** | 30min |
 | 12:25-12:40 | 下午任务发布 | 小组场景选择规则、评价标准、成果要求 | 15min |
 | **中午** | **午餐** | | **1.5小时** |
 | **下午** | | | **3.5小时** |
-| 14:20-14:30 | 分组与环境检查 | 8组×5人，确认场景；助教协助 OpenCode / Provider 配置 | 10min |
+| 14:20-14:30 | 分组与环境检查 | 8组×5人，确认场景；助教协助终端 Agent / Provider 配置 | 10min |
 | 14:30-16:00 | **小组实战** | 各组完成 Prompt 设计 → Agent 执行 → 人工校验 → 迭代优化 | 90min |
 | 16:00-16:15 | **休息** | | 15min |
 | 16:15-17:15 | **小组汇报** | 每组 5-6 分钟：场景 → 过程 → 坑 → 成果 | 60min |
@@ -45,14 +45,17 @@
 
 ## 工具选择说明：OpenCode 与 Claude Code
 
+对本课程的核心目标而言，OpenCode 和 Claude Code 的差别不在"会不会做 Agent 任务"，而在账号、网络、模型供应商和课堂统一支持成本。两者都能承载 Prompt / Context / Harness 的教学主线。
+
 | 维度 | OpenCode | Claude Code | 课堂建议 |
 |------|----------|-------------|----------|
-| 工具定位 | 开源终端 Agent，可连接多种模型供应商 | Anthropic 官方 Agent 工具，体验成熟 | 主讲终端 Agent 工作流，不绑定单一厂商 |
-| 国内课堂可用性 | 可接阿里百炼、DeepSeek 等 OpenAI-compatible API | 依赖 Claude 账号、网络和地区可用性 | 学生默认 OpenCode |
+| 工具定位 | 开源终端 Agent，可连接多种模型供应商 | Anthropic 官方终端 Agent，体验成熟 | 两者都可用于课堂任务 |
+| 共同能力 | 读写文件、多步任务、项目规则文件、工具扩展 | 读写文件、多步任务、项目规则文件、工具扩展 | 教学上重点讲共通工作流 |
+| 国内课堂可用性 | 可接阿里百炼、DeepSeek 等 OpenAI-compatible API | 依赖 Claude 账号、网络和地区可用性 | 统一上机时推荐 OpenCode；条件稳定时可用 Claude Code |
 | 模型供应商 | 多 Provider 与自定义 Provider 配置更灵活 | 官方主线是 Anthropic/Claude，也支持部分企业部署路径 | 中国课堂优先国内 Provider |
-| 安装与账号 | 工具安装后，主要取决于所选模型供应商 | 需要可用的 Claude Code 访问权限 | 避免全班统一依赖 Claude 账号 |
+| 安装与账号 | 工具安装后，主要取决于所选模型供应商 | 需要可用的 Claude Code 访问权限 | 学员可二选一，助教按课前登记支持 |
 | 项目规则文件 | 常用 `AGENTS.md` | 常用 `CLAUDE.md` | 统一讲“项目规则文件” |
-| 适合对象 | 国内课堂、混合模型、批量部署 | 已有 Claude 账号、网络稳定、希望体验官方最佳实践 | OpenCode 主线，Claude Code 对照 |
+| 适合对象 | 国内课堂、混合模型、批量部署 | 已有 Claude 账号、网络稳定、希望体验官方最佳实践 | 课堂推荐 OpenCode 起步，不排斥 Claude Code |
 
 ---
 
@@ -158,7 +161,7 @@
 
 #### 学员跟练（5分钟）
 
-> "请打开你们手机上的通用 AI 网页版，或课前已装好的 OpenCode——任选其一。把下面这句烂 Prompt 发出去，看输出；再改成加上 **Objective + Audience + 一条 Constraint** 的版本，对比差异。不必追求完美，感受'结构'带来的变化即可。"
+> "请打开你们手机上的通用 AI 网页版，或课前已装好的 OpenCode / Claude Code——任选其一。把下面这句烂 Prompt 发出去，看输出；再改成加上 **Objective + Audience + 一条 Constraint** 的版本，对比差异。不必追求完美，感受'结构'带来的变化即可。"
 
 **跟练任务**：用各自熟悉的一家公司（或下午想做的行业），写一句「烂 Prompt」→ 改一版「加结构 Prompt」（至少含 O、A、一条 Constraint）。
 
@@ -295,30 +298,30 @@
 
 #### 硬性要求（开场 1 分钟必说）
 
-> "**本段不做首次安装。** OpenCode、模型供应商 API Key 和 Provider 配置应在课前完成。现在我们只做三件事：验证能连上、读取一个本地文件、认识系统 Context 和 MCP。装不上的同学举手，助教结对，案例阶段可共用电脑。"
+> "**本段不做首次安装。** OpenCode 或 Claude Code 的配置应在课前完成。现在我们只做三件事：验证能连上、读取一个本地文件、认识系统 Context 和 MCP。装不上的同学举手，助教结对，案例阶段可共用电脑。"
 
 #### 演示目标
 
-1. OpenCode = **本课默认终端 Agent**（读文件、多步任务）
-2. 国内模型供应商 = **模型后端**（阿里百炼 / DeepSeek / OpenAI-compatible API）
-3. Claude Code = **对照工具**（讲师演示 / 进阶选项）
+1. OpenCode / Claude Code = **终端 Agent**（读文件、多步任务）
+2. 模型供应商 = **模型后端**（阿里百炼 / DeepSeek / OpenAI-compatible API / Anthropic）
+3. 工具差异不是重点；Prompt / Context / Harness 是可迁移的方法
 4. 补齐上午未讲的 Context：**系统 Context** + **工具 Context**
 
-#### 步骤1：OpenCode 与模型响应验证（8分钟）
+#### 步骤1：终端 Agent 与模型响应验证（8分钟）
 
 学员跟做（讲师逐步投屏）：
 
-1. 打开终端，执行 `opencode --version`
-2. 执行 `opencode`
+1. 打开终端，执行 `opencode --version` 或 `claude --version`
+2. 执行 `opencode` 或 `claude`
 3. 发送：`请用一句话确认你已正常响应`
 
 未通过者：助教登记，**不占用全班时间**；案例跟做时两人一机。
 
-#### 步骤2：OpenCode 最小操作（7分钟）
+#### 步骤2：终端 Agent 最小操作（7分钟）
 
 ```bash
 cd ~/workshop-demo   # 或学员自建 workshop 目录
-opencode
+opencode             # 使用 Claude Code 的同学可执行 claude
 > 请列出当前目录下的文件
 > 请读取 demo.txt 并总结为 3 句话
 ```
@@ -568,7 +571,7 @@ opencode
 #### 助教任务
 
 - 确认每组都已选定场景
-- 协助尚未配置好 OpenCode + 模型 Provider 的学员
+- 协助尚未配置好 OpenCode / Claude Code / 模型 Provider 的学员
 - 分发场景任务卡（每组一份，见 `scenario-tasks/`）
 - 确认每组都有"记录员"角色（负责记录迭代过程）
 

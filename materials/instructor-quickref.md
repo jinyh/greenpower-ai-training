@@ -25,11 +25,11 @@
 | 时间 | 环节 | 关键动作 |
 |------|------|---------|
 | 09:00 | 开场 | 3个对比（Agent vs ChatGPT）+ 今日承诺 |
-| 09:20 | Prompt | 烂 vs 好对比 → **学员跟练 5min**（网页版或 OpenCode） |
+| 09:20 | Prompt | 烂 vs 好对比 → **学员跟练 5min**（网页版或 OpenCode / Claude Code） |
 | 09:50 | Context | **仅外部+对话**；给不给背景对比 → **跟练 5min** |
 | 10:20 | Harness | 有/无约束对比 → **跟练 5min**（加边界+校验两句） |
 | 10:50 | **休息** | 助教巡视环境未通过名单 |
-| 11:05 | 环境 | **≤20min，只验证 OpenCode 与模型响应**；不讲首次安装；演示项目规则文件 + MCP 概念 |
+| 11:05 | 环境 | **≤20min，只验证终端 Agent 与模型响应**；不讲首次安装；演示项目规则文件 + MCP 概念 |
 | 11:25 | 演示1 | 市场调研：**全员跟做** P→C→H→校验 |
 | 11:55 | 演示2 | 财报：**全员跟做**，翻车→纠正必保留 |
 | 12:25 | 下午任务发布 | 场景池 + 评价标准 |
@@ -121,13 +121,14 @@
 
 ### 场景6：网络/API 故障
 
-**表现**：OpenCode 能启动，但模型无响应；或 Provider 配置错误
+**表现**：OpenCode / Claude Code 能启动，但模型无响应；或 Provider / 账号配置错误
 
 **应对话术**：
 > "这类问题现场不要无限排查。先检查 Key、Base URL、模型名和额度；2分钟内解决不了，就先两人一机，保证学习任务不中断。"
 
 **预防措施**：
-- 课前锁定课堂 Provider、Base URL 和模型名
+- 课前登记每位学员使用 OpenCode 还是 Claude Code
+- OpenCode 路径锁定课堂 Provider、Base URL 和模型名
 - 准备一个备用 Provider
 - 准备离线数据集作为保底
 
@@ -204,15 +205,18 @@
 
 ## 六、工具操作速查
 
-### OpenCode 课堂验证
+### 终端 Agent 课堂验证
 
-1. 终端执行：
+1. 终端执行其中一个：
    ```bash
    opencode --version
+   claude --version
    ```
-2. 启动：
+2. 启动对应工具：
    ```bash
    opencode
+   # 或
+   claude
    ```
 3. 发送：
    ```text
@@ -233,16 +237,16 @@ OpenCode 常用 `AGENTS.md`，Claude Code 常用 `CLAUDE.md`。课堂统一讲�
 - 不给买入/卖出建议
 ```
 
-### Claude Code 对照演示（可选）
+### Claude Code 路径说明
 
-适合讲师已有 Claude Code 访问条件时展示：
+适合已有 Claude Code 访问条件、网络稳定的老师或学员：
 
 ```bash
 claude --version
 claude
 ```
 
-强调：Claude Code 是对照工具和进阶选项，不是学生必装项。
+强调：Claude Code 和 OpenCode 在本课核心工作流上差别不大；选择哪个工具，不影响 Prompt / Context / Harness 的学习目标。
 
 ### MCP 概念
 
