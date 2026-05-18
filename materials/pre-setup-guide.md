@@ -1,213 +1,237 @@
 # AI Agent Hands on Lab — 课前准备指南
 
-> **目标受众**：中欧商学院MBA学员
-> **核心工具**：Claude Code + CC Switch + 阿里百炼
-> **请在工作坊开始前完成以下准备，预计耗时30-40分钟**
+> **目标受众**：中欧商学院 MBA 学员
+> **课堂主线工具**：OpenCode + 国内模型供应商（阿里百炼 / DeepSeek / OpenAI-compatible API）
+> **可选对照工具**：Claude Code（讲师演示 / 进阶选项）
+> **预计耗时**：30-45 分钟
+
+### 课前必做（方案 A′）
+
+工作坊采用 **「上午先学 Prompt / Context / Harness，11:05 起再验证环境」** 的节奏：
+
+| 何时完成 | 内容 |
+|---------|------|
+| **课前（必须）** | 安装 OpenCode，准备国内模型供应商 API Key，完成一次启动验证 |
+| **课前（可选）** | 安装 Claude Code，用于体验 Anthropic 官方 Agent 工具 |
+| **课上 11:05-11:25** | 只验证连接、读取文件和执行最小任务；不做首次安装 |
+
+未在课前完成安装的同学，上午仍可跟听三要素并用网页版 AI 工具做跟练；案例阶段请与邻座**共用一台已配置电脑**，或联系助教课前答疑。
 
 ---
 
-## 一、安装 Claude Code
+## 一、为什么课堂默认使用 OpenCode
 
-Claude Code 是 Anthropic 推出的 AI 编程助手，也是本次工作坊的核心交互工具。它能自主执行多步骤任务（读写文件、运行代码、网络搜索等），是理解 AI Agent 工作原理的最佳入口。
+本课不是某一个海外工具的使用培训，而是训练大家掌握 **终端 Agent 工作流**：让 Agent 读取材料、执行任务、输出结果，并通过 Prompt / Context / Harness 控制质量。
 
-### 系统要求
+| 维度 | OpenCode | Claude Code | 课堂建议 |
+|------|----------|-------------|----------|
+| 工具定位 | 开源终端 Agent，可连接多种模型供应商 | Anthropic 官方 Agent 工具，体验成熟 | 主讲工作流，不绑定单一厂商 |
+| 国内课堂可用性 | 可接国内 OpenAI-compatible API，配置弹性更高 | 依赖 Claude 账号、网络和地区可用性 | 学生默认 OpenCode |
+| 模型供应商 | 支持多 Provider 与自定义 OpenAI-compatible Provider | 官方主线是 Anthropic/Claude，也支持部分企业部署路径 | 中国课堂优先国内 Provider |
+| 安装与账号 | 工具安装后，主要取决于所选模型供应商 | 需要可用的 Claude Code 访问权限 | 避免让全班统一依赖 Claude 账号 |
+| 开源性 | 开源，便于教学解释和本地化适配 | 闭源官方产品，适合做标杆对照 | OpenCode 主线，Claude Code 保留 |
+| 规则文件 | 常用 `AGENTS.md` 记录项目规则 | 常用 `CLAUDE.md` 记录项目规则 | 统一讲“项目规则文件” |
+| 适合对象 | 国内课堂、混合模型、批量部署 | 已有 Claude 账号、网络稳定、希望体验官方最佳实践 | 学生 OpenCode，讲师可演示 Claude Code |
 
-- **macOS**: macOS 12 (Monterey) 及以上
-- **Windows**: Windows 10 及以上（需安装 WSL2 + Ubuntu）
-- **Linux**: Ubuntu 22.04+ / Debian 11+ / Fedora 34+
-
-### 安装步骤
-
-#### macOS / Linux
-
-打开终端，执行以下命令：
-
-```bash
-# 使用 npm 全局安装（推荐）
-npm install -g @anthropic-ai/claude-code
-
-# 验证安装
-claude --version
-```
-
-如果看到版本号（如 `0.2.35`），说明安装成功。
-
-#### Windows
-
-Windows 用户需要先安装 WSL2（Windows Subsystem for Linux）：
-
-1. 以管理员身份打开 PowerShell，执行：
-   ```powershell
-   wsl --install
-   ```
-2. 重启电脑，按提示完成 Ubuntu 初始化设置
-3. 进入 WSL2 的 Ubuntu 环境，执行上面的 npm 安装命令
-
-### 首次运行
-
-安装完成后，在终端输入：
-
-```bash
-claude
-```
-
-首次运行会要求登录 Anthropic 账号。请使用您已有的 Anthropic 账号，或根据提示注册一个。
-
-> **注意**：Claude Code 默认使用 Anthropic 官方 API。在正式工作坊中，我们会通过 CC Switch 将其切换到阿里百炼，以获得更稳定的国内访问体验。
+一句话：**OpenCode 更适合作为中国课堂的统一上机工具；Claude Code 仍适合作为高质量对照和进阶工具。**
 
 ---
 
-## 二、安装 CC Switch
+## 二、安装 OpenCode（必做）
 
-CC Switch 是一个桌面应用，用于统一管理 Claude Code、Codex、Gemini CLI 等工具的 API 供应商配置。它让我们可以在不同模型供应商之间一键切换，无需手动修改配置文件。
+请优先参考 OpenCode 官方文档：
 
-### 下载安装
+- OpenCode 文档：https://opencode.ai/docs/
+- OpenCode Provider 文档：https://opencode.ai/docs/providers
 
-#### macOS（推荐 Homebrew）
+### macOS / Linux
 
-```bash
-brew tap farion1231/ccswitch
-brew install --cask cc-switch
-```
-
-安装完成后，在 Launchpad 或 Spotlight 中搜索 "CC Switch" 即可打开。
-
-#### Windows
-
-1. 访问 CC Switch 的 GitHub Releases 页面：
-   https://github.com/farion1231/cc-switch/releases
-2. 下载最新版本的 `CC-Switch-v{版本号}-Windows.msi`
-3. 双击安装
-
-#### Linux
-
-1. 访问上述 Releases 页面
-2. 根据您的发行版选择：
-   - Ubuntu/Debian: `.deb` 包
-   - Fedora/RHEL: `.rpm` 包
-   - 其他: `.AppImage` 通用包
-
-### 首次启动
-
-打开 CC Switch 后：
-
-1. 点击左侧 Claude Code 标签
-2. 点击 "添加供应商"
-3. 选择 "自定义" 或 "官方登录"
-4. 先保留默认设置，工作坊现场我们会统一配置阿里百炼
-
-> **提示**：CC Switch 是本次工作坊的"配置中枢"。即使您现在没完全搞懂，只要安装成功即可，现场会有详细演示。
-
----
-
-## 三、申请阿里百炼 API 账号
-
-阿里百炼是阿里云推出的大模型 API 平台，提供通义千问等模型的稳定访问。在国内网络环境下，它是 Claude Code 的可靠后端。
-
-### 注册步骤
-
-1. 访问阿里百炼官网：
-   https://www.alibabacloud.com/help/zh/model-studio/getting-started/what-is-model-studio
-
-2. 使用阿里云账号登录（如果没有，先注册阿里云账号）
-
-3. 进入控制台，开通"模型服务"（通常有免费试用额度）
-
-4. 创建 API Key：
-   - 在控制台找到 "API Key 管理"
-   - 点击 "创建 API Key"
-   - 复制生成的 Key（以 `sk-` 开头），**妥善保存**
-
-> **安全提醒**：API Key 相当于您的"密码"，不要分享到公开渠道。工作坊中我们会通过 CC Switch 本地管理，不会暴露在命令行中。
-
----
-
-## 四、可选：安装 Node.js（如尚未安装）
-
-Claude Code 和 CC Switch 都依赖 Node.js 环境。如果您的电脑尚未安装，请提前安装：
-
-### macOS
+推荐使用官方安装脚本：
 
 ```bash
-# 使用 Homebrew 安装
-brew install node
-
-# 验证
-node --version  # 应显示 v18.x 或更高
-npm --version
+curl -fsSL https://opencode.ai/install | bash
 ```
+
+如果你习惯使用包管理器，也可以根据官方文档选择 Homebrew 或 npm 等安装方式。
 
 ### Windows
 
-1. 访问 https://nodejs.org/
-2. 下载 LTS 版本（左侧绿色按钮）
-3. 双击安装包，按默认选项完成安装
-4. 打开 PowerShell，执行 `node --version` 验证
+Windows 用户有三种路径，按优先级选择：
 
-### Linux
+1. **推荐：WSL2 + Ubuntu**
+   适合课堂跟做，命令与 macOS/Linux 最接近。
+2. **可选：Chocolatey / Scoop**
+   适合熟悉 Windows 包管理器的同学。
+3. **可选：npm 安装**
+   适合已经有 Node.js 环境的同学。
+
+如果你从未使用过命令行，建议提前联系助教，不要等到课堂现场排查。
+
+### 验证安装
+
+安装后打开终端，执行：
 
 ```bash
-# Ubuntu/Debian
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# 验证
-node --version
+opencode --version
 ```
 
----
-
-## 五、准备清单
-
-工作坊开始前，请确认您已完成以下检查项：
-
-- [ ] 电脑上已安装 Claude Code（`claude --version` 有输出）
-- [ ] 电脑上已安装 CC Switch（能在桌面找到应用图标）
-- [ ] 已注册阿里云/阿里百炼账号
-- [ ] 已创建并保存阿里百炼 API Key（以 `sk-` 开头）
-- [ ] 已安装 Node.js（`node --version` 显示 v18+）
-- [ ] 确保电脑可连接互联网（工作坊需要访问 API）
+如果能看到版本号，说明工具本体安装成功。
 
 ---
 
-## 六、常见问题
+## 三、准备模型供应商 API Key（必做）
 
-### Q1: 安装 Claude Code 时 npm 报错权限不足？
+OpenCode 需要连接一个模型供应商。课堂建议使用国内网络更稳定的 OpenAI-compatible API，例如：
 
-**macOS/Linux**: 尝试使用 npx 临时运行（无需全局安装）：
+| 供应商 | 适用情况 | 说明 |
+|--------|----------|------|
+| 阿里百炼 | 推荐课堂统一使用 | 通义千问等模型，国内访问稳定 |
+| DeepSeek | 可作为备用 | 成本低，适合文本分析任务 |
+| 其他 OpenAI-compatible API | 学员已有账号时使用 | 需确认 Base URL、模型名和 Key 格式 |
+
+### 申请阿里百炼 API Key
+
+1. 访问阿里百炼文档或控制台：
+   https://www.alibabacloud.com/help/zh/model-studio/
+2. 使用阿里云账号登录。
+3. 开通模型服务。
+4. 在控制台中创建 API Key。
+5. 妥善保存 Key，不要发到微信群、公开文档或截图里。
+
+> **安全提醒**：API Key 相当于你的密码。示例材料中统一使用 `API_KEY_PLACEHOLDER`，不要把真实 Key 写进课堂文件。
+
+---
+
+## 四、配置 OpenCode Provider（必做）
+
+不同供应商的 Base URL、模型名和 Key 格式会变化，请以课堂前助教发布的配置为准。
+
+课堂配置建议写成三项：
+
+```text
+Provider: 阿里百炼
+Base URL: 以课堂前官方核验结果为准
+Model: 以课堂指定模型为准
+API Key: API_KEY_PLACEHOLDER
+```
+
+配置完成后，在终端启动：
+
 ```bash
-npx @anthropic-ai/claude-code
+opencode
 ```
 
-**Windows**: 以管理员身份运行 PowerShell，或检查 WSL2 是否正确安装。
+发送一句验证消息：
 
-### Q2: CC Switch 打开后界面空白？
+```text
+请用一句话确认你已正常响应。
+```
 
-尝试重启应用。如果仍有问题，访问 GitHub Issues 页面查看是否有已知问题：
-https://github.com/farion1231/cc-switch/issues
-
-### Q3: 阿里百炼 API Key 申请后没有额度？
-
-新用户通常有免费试用额度。如果显示额度为0，可能是：
-- 未完成实名认证（阿里云账号需要实名）
-- 免费额度已用完（可充值少量金额用于工作坊，通常几元即可）
-
-### Q4: 我是 Windows 用户，WSL2 安装太复杂？
-
-如果实在无法在课前完成 WSL2 安装，可以考虑：
-- 借用同学的 macOS 电脑组队
-- 工作坊现场使用云端环境（如有提供）
-- 提前联系助教寻求帮助
+如果 Agent 能正常回复，说明模型连接成功。
 
 ---
 
-## 七、工作坊当天提醒
+## 五、可选：安装 Claude Code
 
-1. **请携带电脑**：本次工作坊全程上机实操，请务必携带已准备好的笔记本电脑
-2. **提前15分钟到场**：用于现场环境检查和网络调试
-3. **保存好 API Key**：工作坊中需要通过 CC Switch 配置阿里百炼，请确保您的 API Key 可随时访问（建议存在手机备忘录或密码管理器中）
-4. **保持开放心态**：Agent 工具仍在快速迭代，今天学到的不仅是具体操作，更是"与 AI 协作"的思维框架
+Claude Code 是 Anthropic 官方 Agent 工具。它不是本课学生必装项，但适合以下情况：
+
+- 老师或学员已有 Claude Pro / Max / Team / Enterprise / Console 等访问条件。
+- 网络和账号条件稳定。
+- 想体验 Anthropic 官方 Agent 工具的最佳实践。
+- 课后希望继续研究 MCP、权限控制、企业部署等能力。
+
+官方文档：
+
+- Claude Code Setup：https://code.claude.com/docs/en/setup
+- Claude Code Overview：https://code.claude.com/docs/en/overview
+
+安装后可验证：
+
+```bash
+claude --version
+```
+
+课堂中讲师可能会用 Claude Code 做对照演示，但不会要求所有学员必须安装。
 
 ---
 
-> **技术支持**：如果在课前准备中遇到任何问题，请在工作坊微信群中@助教，或在指定时间段参加线上答疑。
+## 六、可选：安装 CC Switch
+
+CC Switch 是一个桌面应用，用于管理部分 CLI 工具的模型供应商配置。它适合讲师或进阶学员统一管理多套 Provider，但不是本课学生完成上机任务的必需条件。
+
+参考地址：
+
+```text
+https://github.com/farion1231/cc-switch/releases
+```
+
+课堂中如果使用 CC Switch，助教会提前说明它管理的是哪一个工具、哪一个 Provider，以及如何验证切换是否生效。
+
+---
+
+## 七、准备清单
+
+工作坊开始前，请确认你已完成以下检查项：
+
+- [ ] 电脑上已安装 OpenCode（`opencode --version` 有输出）
+- [ ] 已准备至少一个模型供应商 API Key
+- [ ] 已按课前通知配置好 Provider
+- [ ] `opencode` 启动后能收到模型回复
+- [ ] 电脑可连接互联网
+- [ ] 已保存 API Key，但没有把真实 Key 写入公开文件
+- [ ] 可选：已安装 Claude Code（`claude --version` 有输出）
+- [ ] 可选：已安装 CC Switch
+
+---
+
+## 八、常见问题
+
+### Q1：我完全不懂命令行，怎么办？
+
+课前先完成 `opencode --version` 这一项即可。课堂中只会使用少量复制粘贴命令，重点是理解 Agent 工作流，不是学习编程。
+
+### Q2：OpenCode 能启动，但模型没有回复？
+
+优先检查三件事：
+
+1. API Key 是否复制完整。
+2. Base URL 和模型名是否与课前通知一致。
+3. 账号是否有可用额度。
+
+如果仍失败，课堂中直接与邻座共用一台已配置电脑，不占用全班时间排查。
+
+### Q3：一定要安装 Claude Code 吗？
+
+不需要。Claude Code 是对照工具和进阶选项。本课学生主线使用 OpenCode。
+
+### Q4：我是 Windows 用户，必须装 WSL2 吗？
+
+不强制，但推荐。WSL2 + Ubuntu 的命令体验与课堂演示最一致，助教也更容易支持。
+
+### Q5：API Key 没有额度怎么办？
+
+可以：
+
+- 检查是否完成实名认证或服务开通。
+- 充值少量额度用于课堂。
+- 使用助教提供的备用方案。
+- 课堂中与同组同学共用已配置电脑。
+
+---
+
+## 九、工作坊当天提醒
+
+1. **请携带电脑**：本次工作坊包含上机实操。
+2. **提前 15 分钟到场**：助教会快速检查 `opencode --version` 和模型回复。
+3. **课前自检命令**：
+   ```bash
+   opencode --version
+   ```
+   可选：
+   ```bash
+   claude --version
+   ```
+4. **保存好 API Key**：建议放在密码管理器或个人备忘录，不要发到群里。
+5. **接受工具差异**：今天学的是 Prompt / Context / Harness 方法论，具体工具会持续变化。
+
+> **技术支持**：如果课前准备中遇到问题，请在工作坊微信群中 @助教，或参加课前线上答疑。
