@@ -8,21 +8,21 @@
 
 ## 场景列表
 
-| 编号 | 场景名称 | 类型 | 难度 | 建议时长 | 文件 |
-|------|---------|------|------|---------|------|
-| S1 | 财报解读与同业对比 | 金融 | ★★★ | 90min | [S1-financial-report.md](S1-financial-report.md) |
-| S2 | IC Memo 草稿生成 | 金融 | ★★★★ | 90min | [S2-ic-memo.md](S2-ic-memo.md) |
-| S3 | 舆情监控简报 | 金融/通用 | ★★ | 90min | [S3-sentiment-monitor.md](S3-sentiment-monitor.md) |
-| S4 | 投资组合月报 | 金融 | ★★★ | 90min | [S4-portfolio-report.md](S4-portfolio-report.md) |
-| S5 | 产业链图谱绘制 | 产业 | ★★★ | 90min | [S5-industry-chain.md](S5-industry-chain.md) |
-| S6 | 商业模式画布生成 | 产业 | ★★★ | 90min | [S6-bmc-generator.md](S6-bmc-generator.md) |
-| S7 | 政策影响评估 | 产业/通用 | ★★★ | 90min | [S7-policy-impact.md](S7-policy-impact.md) |
-| S8 | 竞品功能对比矩阵 | 产业/通用 | ★★ | 90min | [S8-competitor-comparison.md](S8-competitor-comparison.md) |
-| S9 | 会议纪要智能整理 | 通用 | ★★ | 90min | [S9-meeting-minutes.md](S9-meeting-minutes.md) |
-| S10 | 数据故事化汇报 | 通用 | ★★★ | 90min | [S10-data-storytelling.md](S10-data-storytelling.md) |
-| S11 | 商业计划书大纲 | 通用 | ★★★ | 90min | [S11-bp-outline.md](S11-bp-outline.md) |
-| S12 | 行业术语词典 | 通用 | ★★ | 90min | [S12-terminology-dict.md](S12-terminology-dict.md) |
-| S13 | 调研报告生成 | 通用/产业 | ★★★★ | 90min | [S13-research-report.md](S13-research-report.md) |
+| 编号 | 场景名称 | 类型 | 难度 | 难度含义 | 建议时长 | 文件 |
+|------|---------|------|------|---------|---------|------|
+| S1 | 财报解读与同业对比 | 金融 | ★★★ | 标准难度 | 90min | [S1-financial-report.md](S1-financial-report.md) |
+| S2 | IC Memo 草稿生成 | 金融 | ★★★★ | 挑战组：材料复杂、翻车概率高 | 90min | [S2-ic-memo.md](S2-ic-memo.md) |
+| S3 | 舆情监控简报 | 金融/通用 | ★★ | 翻车机会少，适合快速体验迭代流程 | 90min | [S3-sentiment-monitor.md](S3-sentiment-monitor.md) |
+| S4 | 投资组合月报 | 金融 | ★★★ | 标准难度 | 90min | [S4-portfolio-report.md](S4-portfolio-report.md) |
+| S5 | 产业链图谱绘制 | 产业 | ★★★ | 标准难度 | 90min | [S5-industry-chain.md](S5-industry-chain.md) |
+| S6 | 商业模式画布生成 | 产业 | ★★★ | 标准难度 | 90min | [S6-bmc-generator.md](S6-bmc-generator.md) |
+| S7 | 政策影响评估 | 产业/通用 | ★★★ | 标准难度 | 90min | [S7-policy-impact.md](S7-policy-impact.md) |
+| S8 | 竞品功能对比矩阵 | 产业/通用 | ★★ | 翻车机会少，适合快速体验迭代流程 | 90min | [S8-competitor-comparison.md](S8-competitor-comparison.md) |
+| S9 | 会议纪要智能整理 | 通用 | ★★ | 翻车机会少，适合快速体验迭代流程 | 90min | [S9-meeting-minutes.md](S9-meeting-minutes.md) |
+| S10 | 数据故事化汇报 | 通用 | ★★★ | 标准难度 | 90min | [S10-data-storytelling.md](S10-data-storytelling.md) |
+| S11 | 商业计划书大纲 | 通用 | ★★★ | 标准难度 | 90min | [S11-bp-outline.md](S11-bp-outline.md) |
+| S12 | 行业术语词典 | 通用 | ★★ | 翻车机会少，适合快速体验迭代流程 | 90min | [S12-terminology-dict.md](S12-terminology-dict.md) |
+| S13 | 调研报告生成 | 通用/产业 | ★★★★ | 挑战组：材料复杂、翻车概率高 | 90min | [S13-research-report.md](S13-research-report.md) |
 
 ---
 
@@ -39,6 +39,22 @@
 
 ### 如果您喜欢挑战
 优先选择：S13、S2、S10
+
+---
+
+## 难度含义
+
+| 难度 | 含义 | 特点 |
+|------|------|------|
+| ★★ | 快速体验 | 翻车机会少，适合快速体验迭代流程；产出快、迭代多 |
+| ★★★ | 标准难度 | 平衡翻车与成果；适合大多数小组 |
+| ★★★★ | 挑战组 | 材料复杂、翻车概率高；产出慢、迭代少但质量要求高 |
+
+---
+
+## 场景重叠提醒
+
+> S7（政策影响评估）与 S13（调研报告）的核心材料都涉及东南亚新能源汽车市场。如果两组分别选了 S7 和 S13，需确保关注点不同：**S7 侧重政策影响分析**（欧盟关税 + 美国 IRA 对中国电池企业的影响），**S13 侧重市场进入策略**（东南亚各国的市场规模、竞争格局、进入路径）。建议助教协调时提醒。
 
 ---
 
@@ -70,6 +86,8 @@
 | 第一轮 | 20-50min | Agent 执行 + 人工校验 |
 | 迭代 | 50-70min | 根据问题调整 Prompt/Harness |
 | 整理 | 70-90min | 整理最终成果和汇报材料 |
+
+> **复杂场景提示**：输出项≥7的场景（S6、S7、S11、S13），Agent 单次执行时间较长，建议只做 **1轮深度迭代+校验**，不追求多轮浅迭代。简单场景（S3、S8、S9、S12）则可做 2-3轮迭代。
 
 ---
 
