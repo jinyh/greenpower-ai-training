@@ -110,7 +110,7 @@ OpenCode 需要连接一个模型供应商。课堂建议使用国内网络更�
 
 不同供应商的 Base URL、模型名和 Key 格式会变化，请以课堂前助教发布的配置为准。
 
-课堂配置建议写成三项：
+课堂配置建议写成四项：
 
 ```text
 Provider: 阿里百炼
@@ -118,6 +118,18 @@ Base URL: 以课堂前官方核验结果为准
 Model: 以课堂指定模型为准
 API Key: API_KEY_PLACEHOLDER
 ```
+
+最小配置步骤：
+
+1. 在终端启动 OpenCode：
+   ```bash
+   opencode
+   ```
+2. 按课前通知添加模型供应商。不同版本界面可能略有差异，常见方式是在 OpenCode 中执行 `/connect`，或按官方 Provider 文档编辑配置文件。
+3. 填入助教课前发布的 `Base URL`、`Model` 和自己的 `API Key`。
+4. 保存后重新启动 OpenCode。
+
+> **课堂口径**：本课不要求学员记住 Provider 配置细节。课前由助教发布已核验的截图版配置；课上只验证是否能正常响应。
 
 配置完成后，在终端启动：
 
@@ -269,7 +281,7 @@ https://github.com/farion1231/cc-switch/releases
 
 ---
 
-## 九、工作坊当天提醒
+## 十、工作坊当天提醒
 
 1. **请携带电脑**：本次工作坊包含上机实操。
 2. **提前 15 分钟到场**：助教会快速检查 `opencode --version` 或 `claude --version`，以及模型回复。
