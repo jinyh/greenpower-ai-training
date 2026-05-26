@@ -12,3 +12,7 @@ projects/*/svg_output/
 
 # 第三方参考资料（涉及版权，不入库）
 ppt-ref/
+
+# 原始抓取资料体积大且可能涉及版权；只保留 raw 根目录下的说明类 Markdown
+raw/*
+!raw/*.md
