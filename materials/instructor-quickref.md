@@ -275,27 +275,27 @@
 
 1. 终端执行其中一个：
    ```bash
-   opencode --version
    claude --version
+   opencode --version
    ```
 2. 启动对应工具：
    ```bash
-   opencode
-   # 或
    claude
+   # 或
+   opencode
    ```
 3. 发送：
    ```text
    请用一句话确认你已正常响应。
    ```
-4. 若无响应，优先检查：API Key、Base URL、模型名、账号额度。
+4. 若无响应，优先检查：CC Switch 配置、API Key、Base URL、模型名、账号额度。
 
 ### 项目规则文件
 
-OpenCode 常用 `AGENTS.md`，Claude Code 常用 `CLAUDE.md`。课堂统一讲“项目规则文件”，示例：
+Claude Code 常用 `CLAUDE.md`，OpenCode 常用 `AGENTS.md`。课堂统一讲”项目规则文件”，示例：
 
 ```markdown
-# AGENTS.md
+# CLAUDE.md
 
 ## 角色
 你是某投研/战略分析团队的资深分析师。
@@ -326,16 +326,16 @@ OpenCode 常用 `AGENTS.md`，Claude Code 常用 `CLAUDE.md`。课堂统一讲�
 
 > **模板变体**：`context-management.md` 提供了3个版本——金融投研版（适合S1-S4，禁忌=不给投资建议）、产业咨询版（适合S5-S8，禁忌=不给具体商业决策建议）、通用助理版（适合S9-S13，禁忌=不添加主观判断）。下午实战时提醒学员选择适配版本。
 
-### Claude Code 路径说明
+### OpenCode 备用路径说明
 
-适合已有 Claude Code 访问条件、网络稳定的老师或学员：
+适合无法使用 Claude Code 的学员，作为合规备用方案：
 
 ```bash
-claude --version
-claude
+opencode --version
+opencode
 ```
 
-强调：Claude Code 和 OpenCode 在本课核心工作流上差别不大；选择哪个工具，不影响 Prompt / Context / Harness 的学习目标。
+强调：Claude Code 和 OpenCode 在本课核心工作流上差别不大；选择哪个工具，不影响 Prompt / Context / Harness 的学习目标。课堂推荐 Claude Code + CC Switch 统一配置。
 
 ### MCP 概念
 

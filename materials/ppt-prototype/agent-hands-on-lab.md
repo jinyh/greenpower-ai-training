@@ -100,12 +100,12 @@ Notes:
 ## 07. 课上只验证，不现场重装
 
 Layout: checklist
-Visual: 终端检查清单，包含 OpenCode / Claude Code、Provider、模型响应、项目规则文件四个勾选项
+Visual: 终端检查清单，包含 Claude Code、CC Switch、阿里百炼配置、模型响应、项目规则文件五个勾选项
 
 Content:
 - 课前完成安装，课上只验证工具能否启动和模型能否响应
-- OpenCode + 国内模型供应商作为课堂统一基线
-- Claude Code 作为等价可选路径和讲师演示工具
+- Claude Code + CC Switch + 阿里百炼作为课堂统一基线
+- OpenCode 作为合规备用方案
 - 环境故障 2 分钟内解决不了，先保证学习不中断
 
 Notes:

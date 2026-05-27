@@ -1,8 +1,8 @@
 # AI Agent Hands on Lab — 课前准备指南
 
 > **目标受众**：中欧商学院 MBA 学员
-> **终端 Agent 工具**：OpenCode / Claude Code（二选一即可完成课堂任务）
-> **推荐课堂基线**：OpenCode + 国内模型供应商（阿里百炼 / DeepSeek / OpenAI-compatible API）
+> **终端 Agent 工具**：Claude Code + CC Switch（推荐）/ OpenCode（合规备用）
+> **推荐课堂基线**：Claude Code + CC Switch + 阿里百炼
 > **预计耗时**：30-45 分钟
 
 ### 课前必做（方案 A′）
@@ -11,37 +11,128 @@
 
 | 何时完成 | 内容 |
 |---------|------|
-| **课前（必须）** | 至少完成一种终端 Agent：OpenCode 或 Claude Code |
-| **推荐路径** | OpenCode + 国内模型供应商 API Key，便于中国课堂统一支持 |
-| **可选路径** | 已有稳定 Claude Code 访问条件的学员，可直接使用 Claude Code |
+| **课前（必须）** | 至少完成一种终端 Agent：Claude Code 或 OpenCode |
+| **推荐路径** | Claude Code + CC Switch + 阿里百炼，便于课堂统一支持 |
+| **备用路径** | OpenCode + 国内模型供应商（合规备用） |
 | **课上 11:05-11:25** | 只验证连接、读取文件和执行最小任务；不做首次安装 |
 
 未在课前完成安装的同学，上午仍可跟听三要素并用网页版 AI 工具做跟练；案例阶段请与邻座**共用一台已配置电脑**，或联系助教课前答疑。
 
 ---
 
-## 一、OpenCode 和 Claude Code 怎么选
+## 一、Claude Code 和 OpenCode 怎么选
 
 本课不是某一个海外工具的使用培训，而是训练大家掌握 **终端 Agent 工作流**：让 Agent 读取材料、执行任务、输出结果，并通过 Prompt / Context / Harness 控制质量。
 
-对 MBA hands-on 的教学目标而言，OpenCode 和 Claude Code 没有本质差别：都能读文件、执行多步任务、遵守项目规则文件、配合工具扩展。真正影响课堂体验的是账号、网络、模型供应商和助教统一支持成本。
+对 MBA hands-on 的教学目标而言，Claude Code 和 OpenCode 没有本质差别：都能读文件、执行多步任务、遵守项目规则文件、配合工具扩展。课堂推荐使用 Claude Code + CC Switch + 阿里百炼作为统一基线。
 
-| 维度 | OpenCode | Claude Code | 课堂建议 |
-|------|----------|-------------|----------|
-| 工具定位 | 开源终端 Agent，可连接多种模型供应商 | Anthropic 官方 Agent 工具，体验成熟 | 两者都可完成课堂任务 |
+| 维度 | Claude Code | OpenCode | 课堂建议 |
+|------|-------------|----------|----------|
+| 工具定位 | Anthropic 官方 Agent 工具，体验成熟 | 开源终端 Agent，可连接多种模型供应商 | 推荐 Claude Code + CC Switch |
 | 共同能力 | 读写文件、多步任务、项目规则文件、工具扩展 | 读写文件、多步任务、项目规则文件、工具扩展 | 教学重点讲共通工作流 |
-| 国内课堂可用性 | 可接国内 OpenAI-compatible API，配置弹性更高 | 依赖 Claude 账号、网络和地区可用性 | 统一上机时推荐 OpenCode；条件稳定时可用 Claude Code |
-| 模型供应商 | 支持多 Provider 与自定义 OpenAI-compatible Provider | 官方主线是 Anthropic/Claude，也支持部分企业部署路径 | 中国课堂优先国内 Provider |
-| 安装与账号 | 工具安装后，主要取决于所选模型供应商 | 需要可用的 Claude Code 访问权限 | 学员可二选一，助教按课前登记支持 |
-| 开源性 | 开源，便于教学解释和本地化适配 | 闭源官方产品，适合做官方体验参考 | 不把工具差异讲成课程重点 |
-| 规则文件 | 常用 `AGENTS.md` 记录项目规则 | 常用 `CLAUDE.md` 记录项目规则 | 统一讲“项目规则文件” |
-| 适合对象 | 国内课堂、混合模型、批量部署 | 已有 Claude 账号、网络稳定、希望体验官方最佳实践 | 推荐 OpenCode 起步，不排斥 Claude Code |
+| 国内课堂可用性 | 通过 CC Switch 统一管理阿里百炼配置 | 可接国内 OpenAI-compatible API，配置弹性更高 | 统一上机时推荐 Claude Code + CC Switch |
+| 模型供应商 | 官方主线是 Anthropic/Claude，通过 CC Switch 可接国内供应商 | 支持多 Provider 与自定义 OpenAI-compatible Provider | 课堂统一使用 CC Switch 管理阿里百炼配置 |
+| 安装与账号 | 需要可用的 Claude Code 访问权限 | 工具安装后，主要取决于所选模型供应商 | 学员按课前通知统一配置 |
+| 开源性 | 闭源官方产品，适合做官方体验参考 | 开源，便于教学解释和本地化适配 | 不把工具差异讲成课程重点 |
+| 规则文件 | 常用 `CLAUDE.md` 记录项目规则 | 常用 `AGENTS.md` 记录项目规则 | 统一讲”项目规则文件” |
+| 适合对象 | 课堂统一配置、希望体验官方最佳实践 | 合规备用、混合模型、批量部署 | 课堂推荐 Claude Code + CC Switch，OpenCode 作为合规备用 |
 
-一句话：**课堂统一支持时推荐 OpenCode；如果你已经能稳定使用 Claude Code，也完全可以用 Claude Code 完成同样的练习。**
+一句话：**课堂统一支持时推荐 Claude Code + CC Switch；OpenCode 作为合规备用方案。**
 
 ---
 
-## 二、安装 OpenCode（推荐路径）
+## 二、安装 Claude Code（推荐路径）
+
+Claude Code 是 Anthropic 官方 Agent 工具，课堂推荐使用。它可以完成本课所有练习，适合以下情况：
+
+- 课堂统一配置，便于助教支持
+- 通过 CC Switch 统一管理阿里百炼配置
+- 想使用 Anthropic 官方 Agent 工具
+- 课后希望继续研究 MCP、权限控制、企业部署等能力
+
+官方文档：
+
+- Claude Code Setup：https://code.claude.com/docs/en/setup
+- Claude Code Overview：https://code.claude.com/docs/en/overview
+
+### 安装步骤
+
+请按照官方文档完成安装。安装后可验证：
+
+```bash
+claude --version
+```
+
+如果能看到版本号，说明工具本体安装成功。
+
+---
+
+## 三、安装 CC Switch（课堂统一配置工具）
+
+CC Switch 是一个桌面应用，用于管理 Claude Code 的模型供应商配置。课堂推荐使用它来统一管理阿里百炼配置。
+
+参考地址：
+
+```text
+https://github.com/farion1231/cc-switch/releases
+```
+
+### 安装步骤
+
+1. 访问 CC Switch GitHub Releases 页面
+2. 下载适合你操作系统的版本（macOS / Windows / Linux）
+3. 按照 README 说明完成安装
+4. 启动 CC Switch
+
+---
+
+## 四、配置 CC Switch + 阿里百炼
+
+### 准备阿里百炼 API Key
+
+1. 访问阿里百炼文档或控制台：
+   https://www.alibabacloud.com/help/zh/model-studio/
+2. 使用阿里云账号登录
+3. 开通模型服务
+4. 在控制台中创建 API Key
+5. 妥善保存 Key，不要发到微信群、公开文档或截图里
+
+> **安全提醒**：API Key 相当于你的密码。示例材料中统一使用 `API_KEY_PLACEHOLDER`，不要把真实 Key 写进课堂文件。
+
+### 在 CC Switch 中配置阿里百炼
+
+课堂配置建议写成四项：
+
+```text
+Provider: 阿里百炼
+Base URL: 以课堂前助教发布的配置为准
+Model: 以课堂指定模型为准
+API Key: 你的阿里百炼 API Key
+```
+
+> **课堂口径**：本课不要求学员记住 Provider 配置细节。课前由助教发布已核验的截图版配置；课上只验证是否能正常响应。
+
+### 验证配置
+
+配置完成后，在终端启动：
+
+```bash
+claude
+```
+
+发送一句验证消息：
+
+```text
+请用一句话确认你已正常响应。
+```
+
+如果 Agent 能正常回复，说明模型连接成功。
+
+---
+
+## 五、安装 OpenCode（合规备用路径）
+
+OpenCode 是开源终端 Agent，可作为合规备用方案。如果你无法使用 Claude Code，可以选择 OpenCode。
 
 请优先参考 OpenCode 官方文档：
 
@@ -83,30 +174,17 @@ opencode --version
 
 ---
 
-## 三、准备模型供应商 API Key（使用 OpenCode 时需要）
+## 六、配置 OpenCode Provider（使用 OpenCode 时需要）
 
 OpenCode 需要连接一个模型供应商。课堂建议使用国内网络更稳定的 OpenAI-compatible API，例如：
 
 | 供应商 | 适用情况 | 说明 |
 |--------|----------|------|
-| 阿里百炼 | 推荐课堂统一使用 | 通义千问等模型，国内访问稳定 |
+| 阿里百炼 | 推荐 | 通义千问等模型，国内访问稳定 |
 | DeepSeek | 可作为备用 | 成本低，适合文本分析任务 |
 | 其他 OpenAI-compatible API | 学员已有账号时使用 | 需确认 Base URL、模型名和 Key 格式 |
 
-### 申请阿里百炼 API Key
-
-1. 访问阿里百炼文档或控制台：
-   https://www.alibabacloud.com/help/zh/model-studio/
-2. 使用阿里云账号登录。
-3. 开通模型服务。
-4. 在控制台中创建 API Key。
-5. 妥善保存 Key，不要发到微信群、公开文档或截图里。
-
-> **安全提醒**：API Key 相当于你的密码。示例材料中统一使用 `API_KEY_PLACEHOLDER`，不要把真实 Key 写进课堂文件。
-
----
-
-## 四、配置 OpenCode Provider（使用 OpenCode 时需要）
+### 配置步骤
 
 不同供应商的 Base URL、模型名和 Key 格式会变化，请以课堂前助教发布的配置为准。
 
@@ -144,44 +222,6 @@ opencode
 ```
 
 如果 Agent 能正常回复，说明模型连接成功。
-
----
-
-## 五、安装 Claude Code（可选路径）
-
-Claude Code 是 Anthropic 官方 Agent 工具。它同样可以完成本课练习，适合以下情况：
-
-- 老师或学员已有 Claude Pro / Max / Team / Enterprise / Console 等访问条件。
-- 网络和账号条件稳定。
-- 想使用 Anthropic 官方 Agent 工具作为课堂操作工具。
-- 课后希望继续研究 MCP、权限控制、企业部署等能力。
-
-官方文档：
-
-- Claude Code Setup：https://code.claude.com/docs/en/setup
-- Claude Code Overview：https://code.claude.com/docs/en/overview
-
-安装后可验证：
-
-```bash
-claude --version
-```
-
-如果你选择 Claude Code 路径，确保课前能完成 `claude --version` 和一次正常对话响应。
-
----
-
-## 六、可选：安装 CC Switch
-
-CC Switch 是一个桌面应用，用于管理部分 CLI 工具的模型供应商配置。它适合讲师或进阶学员统一管理多套 Provider，但不是本课学生完成上机任务的必需条件。
-
-参考地址：
-
-```text
-https://github.com/farion1231/cc-switch/releases
-```
-
-课堂中如果使用 CC Switch，助教会提前说明它管理的是哪一个工具、哪一个 Provider，以及如何验证切换是否生效。
 
 ---
 
@@ -232,13 +272,13 @@ https://github.com/farion1231/cc-switch/releases
 
 工作坊开始前，请确认你已完成以下检查项：
 
-- [ ] 电脑上已安装至少一种终端 Agent：OpenCode 或 Claude Code
-- [ ] OpenCode 路径：`opencode --version` 有输出
-- [ ] OpenCode 路径：已准备至少一个模型供应商 API Key，并按课前通知配置好 Provider
-- [ ] Claude Code 路径：`claude --version` 有输出，且能正常响应
+- [ ] 电脑上已安装至少一种终端 Agent：Claude Code 或 OpenCode
+- [ ] Claude Code 路径（推荐）：`claude --version` 有输出，且能正常响应
+- [ ] CC Switch 已安装并配置阿里百炼
+- [ ] OpenCode 路径（备用）：`opencode --version` 有输出
+- [ ] OpenCode 路径（备用）：已准备至少一个模型供应商 API Key，并按课前通知配置好 Provider
 - [ ] 电脑可连接互联网
 - [ ] 如使用 API Key，已妥善保存 Key，但没有把真实 Key 写入公开文件
-- [ ] 可选：已安装 CC Switch
 
 ---
 
@@ -262,9 +302,9 @@ https://github.com/farion1231/cc-switch/releases
 
 对本课目标来说差别不大。两者都能承担“读取材料 -> 执行任务 -> 输出结果 -> 人工校验”的 Agent 工作流。差别主要在账号和网络条件、模型供应商、插件生态和课堂支持成本。
 
-### Q4：一定要安装 OpenCode 吗？
+### Q4：一定要安装 Claude Code 吗？
 
-如果你已经能稳定使用 Claude Code，可以不安装 OpenCode。为了课堂统一支持，仍建议大多数学员走 OpenCode 路径。
+课堂推荐使用 Claude Code + CC Switch + 阿里百炼作为统一基线。如果无法使用 Claude Code，可以使用 OpenCode 作为合规备用方案。
 
 ### Q5：我是 Windows 用户，必须装 WSL2 吗？
 

@@ -2,8 +2,8 @@
 
 > **适用对象**：中欧商学院MBA（偏产业与金融背景）
 > **总时长**：09:00-17:30，约8.5小时（含午餐与休息；教学净时长约6小时50分钟）
-> **核心工具**：OpenCode / Claude Code（二选一即可完成课堂任务）
-> **推荐课堂基线**：OpenCode + 国内模型供应商（阿里百炼 / DeepSeek / OpenAI-compatible API）
+> **核心工具**：Claude Code + CC Switch（推荐）/ OpenCode（合规备用）
+> **推荐课堂基线**：Claude Code + CC Switch + 阿里百炼
 > **核心理念**：Agent 是杠杆，不是替代；Prompt-Context-Harness 是驾驭 Agent 的三要素
 
 ### 上午教学法：方案 A′
@@ -12,7 +12,7 @@
 
 | 原则 | 说明 |
 |------|------|
-| 课前装环境 | 至少完成一种终端 Agent 配置：推荐 OpenCode + 国内 Provider；已有稳定 Claude Code 的学员也可使用 Claude Code |
+| 课前装环境 | 至少完成一种终端 Agent 配置：推荐 Claude Code + CC Switch；OpenCode 作为合规备用 |
 | 上午前半段 | P/C/H 以讲师大屏对比为主；每模块末尾 **5 分钟口头/网页跟练**（不必开终端） |
 | Context 分段 | 上午只讲**外部 + 对话**两类；**项目规则文件 / MCP** 挪到环境段演示 |
 | 上午后半段 | 环境 ≤20 分钟 → 两个案例各 30 分钟，**学员在自己电脑上同步跟做** |
@@ -43,19 +43,19 @@
 
 ---
 
-## 工具选择说明：OpenCode 与 Claude Code
+## 工具选择说明：Claude Code 与 OpenCode
 
-对本课程的核心目标而言，OpenCode 和 Claude Code 的差别不在"会不会做 Agent 任务"，而在账号、网络、模型供应商和课堂统一支持成本。两者都能承载 Prompt / Context / Harness 的教学主线。
+对本课程的核心目标而言，Claude Code 和 OpenCode 的差别不在”会不会做 Agent 任务”，而在配置便利性和课堂统一支持成本。课堂推荐使用 Claude Code + CC Switch + 阿里百炼作为统一基线。
 
-| 维度 | OpenCode | Claude Code | 课堂建议 |
-|------|----------|-------------|----------|
-| 工具定位 | 开源终端 Agent，可连接多种模型供应商 | Anthropic 官方终端 Agent，体验成熟 | 两者都可用于课堂任务 |
+| 维度 | Claude Code | OpenCode | 课堂建议 |
+|------|-------------|----------|----------|
+| 工具定位 | Anthropic 官方终端 Agent，体验成熟 | 开源终端 Agent，可连接多种模型供应商 | 推荐 Claude Code + CC Switch |
 | 共同能力 | 读写文件、多步任务、项目规则文件、工具扩展 | 读写文件、多步任务、项目规则文件、工具扩展 | 教学上重点讲共通工作流 |
-| 国内课堂可用性 | 可接阿里百炼、DeepSeek 等 OpenAI-compatible API | 依赖 Claude 账号、网络和地区可用性 | 统一上机时推荐 OpenCode；条件稳定时可用 Claude Code |
-| 模型供应商 | 多 Provider 与自定义 Provider 配置更灵活 | 官方主线是 Anthropic/Claude，也支持部分企业部署路径 | 中国课堂优先国内 Provider |
-| 安装与账号 | 工具安装后，主要取决于所选模型供应商 | 需要可用的 Claude Code 访问权限 | 学员可二选一，助教按课前登记支持 |
-| 项目规则文件 | 常用 `AGENTS.md` | 常用 `CLAUDE.md` | 统一讲“项目规则文件” |
-| 适合对象 | 国内课堂、混合模型、批量部署 | 已有 Claude 账号、网络稳定、希望体验官方最佳实践 | 课堂推荐 OpenCode 起步，不排斥 Claude Code |
+| 国内课堂可用性 | 通过 CC Switch 统一管理阿里百炼配置 | 可接阿里百炼、DeepSeek 等 OpenAI-compatible API | 统一上机时推荐 Claude Code + CC Switch |
+| 模型供应商 | 官方主线是 Anthropic/Claude，通过 CC Switch 可接国内供应商 | 多 Provider 与自定义 Provider 配置更灵活 | 课堂统一使用 CC Switch 管理阿里百炼配置 |
+| 安装与账号 | 需要可用的 Claude Code 访问权限 | 工具安装后，主要取决于所选模型供应商 | 学员按课前通知统一配置 |
+| 项目规则文件 | 常用 `CLAUDE.md` | 常用 `AGENTS.md` | 统一讲”项目规则文件” |
+| 适合对象 | 课堂统一配置、希望体验官方最佳实践 | 合规备用、混合模型、批量部署 | 课堂推荐 Claude Code + CC Switch，OpenCode 作为合规备用 |
 
 ---
 
@@ -180,7 +180,7 @@ Harness = 风控线：不能做什么、错了怎么暴露
 
 #### 三个关键对比（PPT建议）
 
-| 对比维度 | 传统 ChatGPT | 终端 Agent（OpenCode / Claude Code） |
+| 对比维度 | 传统 ChatGPT | 终端 Agent（Claude Code / OpenCode） |
 |---------|------------|----------------------|
 | 交互方式 | 一问一答，人驱动 | 多步骤自主执行，人设定目标 |
 | 能力边界 | 只动嘴（生成文字） | 能动手（读写文件、运行代码、调用工具） |
@@ -690,12 +690,12 @@ Context：
 
 #### 硬性要求（开场 1 分钟必说）
 
-> "**本段不做首次安装。** OpenCode 或 Claude Code 的配置应在课前完成。现在我们只做三件事：验证能连上、读取一个本地文件、认识系统 Context 和 MCP。装不上的同学举手，助教结对，案例阶段可共用电脑。"
+> "**本段不做首次安装。** Claude Code 或 OpenCode 的配置应在课前完成。现在我们只做三件事：验证能连上、读取一个本地文件、认识系统 Context 和 MCP。装不上的同学举手，助教结对，案例阶段可共用电脑。"
 
 #### 演示目标
 
-1. OpenCode / Claude Code = **终端 Agent**（读文件、多步任务）
-2. 模型供应商 = **模型后端**（阿里百炼 / DeepSeek / OpenAI-compatible API / Anthropic）
+1. Claude Code / OpenCode = **终端 Agent**（读文件、多步任务）
+2. 模型供应商 = **模型后端**（通过 CC Switch 管理阿里百炼配置）
 3. 工具差异不是重点；Prompt / Context / Harness 是可迁移的方法
 4. 补齐上午未讲的 Context：**系统 Context** + **工具 Context**
 
@@ -735,7 +735,7 @@ Context：
 
 ```bash
 cd ~/workshop-demo   # 或学员自建 workshop 目录
-opencode             # 使用 Claude Code 的同学可执行 claude
+claude               # 使用 OpenCode 的同学可执行 opencode
 > 请列出当前目录下的文件
 > 请读取 demo.txt 并总结为 3 句话
 ```
@@ -1299,11 +1299,10 @@ Prompt 中明确：
 
 #### 课后资源推荐（3分钟）
 
-- OpenCode 官方文档：https://opencode.ai/docs/
-- OpenCode Provider 文档：https://opencode.ai/docs/providers
 - Claude Code 官方文档：https://code.claude.com/docs/en/overview
-- CC Switch GitHub 仓库（进阶可选）：https://github.com/farion1231/cc-switch
+- CC Switch GitHub 仓库：https://github.com/farion1231/cc-switch
 - 阿里百炼控制台：https://www.alibabacloud.com/help/zh/model-studio/
+- OpenCode 官方文档（备用）：https://opencode.ai/docs/
 - 课后复盘建议：把本组最终 Prompt、Context 与 Harness 固化成团队模板
 
 #### 开放提问（2分钟）
