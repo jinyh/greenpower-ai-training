@@ -1,1 +1,18 @@
 .DS_Store
+.env
+.venv/
+node_modules/
+
+# PPT 流水线构建产物（可由 tools/ppt-pipeline 重新生成）
+outputs/
+projects/*/exports/
+projects/*/render/
+projects/*/backup/
+projects/*/svg_output/
+
+# 第三方参考资料（涉及版权，不入库）
+ppt-ref/
+
+# 原始抓取资料体积大且可能涉及版权；只保留 raw 根目录下的说明类 Markdown
+raw/*
+!raw/*.md
