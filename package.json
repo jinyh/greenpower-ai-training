@@ -1,16 +1,14 @@
 {
-  "name": "handsonlab-ppt-pipeline",
+  "name": "handsonlab",
   "version": "0.1.0",
   "private": true,
-  "description": "Prototype pipeline for turning workshop Markdown into editable PPTX decks.",
+  "description": "AI Agent Hands-on Lab workshop materials.",
   "scripts": {
-    "test": "node --test",
-    "ppt:manifest": "node tools/ppt-pipeline/build-manifest.js materials/ppt-prototype/agent-hands-on-lab.md outputs/ppt-prototype/agent-hands-on-lab.manifest.json",
-    "ppt:assets": "node tools/ppt-pipeline/generate-assets.js outputs/ppt-prototype/agent-hands-on-lab.manifest.json",
-    "ppt:build": "node tools/ppt-pipeline/build-ppt.js outputs/ppt-prototype/agent-hands-on-lab.manifest.json outputs/ppt-prototype/agent-hands-on-lab.pptx"
+    "test": "node --test"
   },
   "dependencies": {
-    "lucide-static": "^1.16.0",
+    "docx": "^9.7.1",
+    "playwright": "^1.60.0",
     "pptxgenjs": "^4.0.1",
     "sharp": "^0.34.5"
   }

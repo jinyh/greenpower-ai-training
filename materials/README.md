@@ -10,7 +10,8 @@
 materials/
 |
 |-- pre-workshop-survey.md        # 课前调研：了解学员背景和场景偏好
-|-- pre-setup-guide.md            # 课前准备：安装 Claude Code + CC Switch，准备阿里百炼访问
+|-- pre-setup-guide.md            # 课前准备：安装 OpenCode / Claude Code，准备模型访问
+|-- tool-comparison-opencode-pi.md # 讲师参考：OpenCode 与 Pi Agent 工具选型比较
 |
 |-- student-pack/                 # 学员分发包：只放适合学员直接看到的入口和裁剪版材料
 |-- instructor-pack/              # 讲师/助教包：只放内部使用入口
@@ -18,15 +19,19 @@ materials/
 |-- workshop-outline.md           # 主讲稿：全天课程节奏、讲解话术、演示流程
 |-- instructor-quickref.md        # 讲师速查：现场控场、翻车话术、应急方案
 |
-|-- prompt-design-guide.md        # Prompt 参考：烂 Prompt vs 好 Prompt 对比
+|-- prompt-design-guide.md        # Prompt 参考：烂 Prompt vs 好 Prompt 对比 + 加 Harness 前后对比
 |-- context-management.md         # Context 参考：材料、对话、规则文件、工具上下文
 |-- harness-templates.md          # Harness 参考：防幻觉、格式、边界、校验模板
+|
+|-- cases/                        # 教学案例：可直接投屏的真实翻车故事
+|   |-- agent-collapse-10-step.md # ltbase 10-Step Collapse 中文降维版
+|   `-- woshipm-logistics-harness.md # woshipm 干线物流 6 个 Agent 的实战复盘
 |
 |-- group-evaluation.md           # 小组评价：下午汇报评分维度和评分表
 |
 `-- scenario-tasks/
     |-- README.md                 # 下午任务卡目录、选择规则、成果要求
-    |-- S1-...S13-*.md            # 13 张小组实战任务卡
+    `-- S1-...S17-*.md            # 17 张小组实战任务卡
 ```
 
 ---
@@ -72,37 +77,24 @@ materials/
 ## 三、分发建议
 
 ```text
-student-pack/                      # 学员分发包（可独立推送到 GitHub 公开仓库）
+student-pack/
 |
-|-- README.md                      # 学员材料入口：说明哪些课前看、哪些课中用
-|-- pre-workshop-survey.md         # 学员版问卷：只保留 Q1-Q5，不含讲师解读附录
-|-- group-evaluation-student.md    # 学员版评分说明：只保留评分维度和成果要求
-|-- pre-setup-guide.md             # 课前准备指南
-|-- prompt-design-guide.md         # Prompt 设计对比材料
-|-- context-management.md          # Context 管理最佳实践
-|-- harness-templates.md           # Harness 模板库
-`-- scenario-tasks/                # 场景任务卡（含所有 S1-S13 和 data/）
-    |-- README.md                  # 包含免责声明
-    |-- S1-financial-report.md
-    |-- ...
-    `-- data/
+|-- README.md                     # 学员材料入口：说明哪些课前看、哪些课中用
+|-- pre-workshop-survey.md        # 学员版问卷：只保留 Q1-Q5，不含讲师解读附录
+`-- group-evaluation-student.md   # 学员版评分说明：只保留评分维度和成果要求
 
 instructor-pack/
-`-- README.md                      # 讲师/助教内部入口：链接到讲稿、速查、完整版评分表
+`-- README.md                     # 讲师/助教内部入口：链接到讲稿、速查、完整版评分表
 ```
-
-**推送到 GitHub 的策略：**
-- **学员仓库（公开）**：只推送 `student-pack/` 目录
-- **主仓库（私有）**：包含完整的 `materials/`，包括讲师材料
 
 建议分发节奏：
 
 | 时间 | 发给学员 | 不建议发给学员 |
 |------|----------|----------------|
-| 课前 3-7 天 | `student-pack/README.md`、`student-pack/pre-workshop-survey.md`、`student-pack/pre-setup-guide.md` | `workshop-outline.md`、`instructor-quickref.md` |
-| 上午课后 | `student-pack/prompt-design-guide.md`、`student-pack/context-management.md`、`student-pack/harness-templates.md` | 主讲稿中的翻车设计和应急话术 |
-| 下午实战 | `student-pack/scenario-tasks/README.md`、对应任务卡、`student-pack/group-evaluation-student.md` | 完整版 `group-evaluation.md` 的教授点评和汇总模板 |
-| 课后 | 整个 `student-pack/` 目录 | 讲师内部控场材料 |
+| 课前 3-7 天 | `student-pack/README.md`、`student-pack/pre-workshop-survey.md`、`pre-setup-guide.md` | `workshop-outline.md`、`instructor-quickref.md` |
+| 上午课后 | `prompt-design-guide.md`、`context-management.md`、`harness-templates.md` | 主讲稿中的翻车设计和应急话术 |
+| 下午实战 | `scenario-tasks/README.md`、对应任务卡、`student-pack/group-evaluation-student.md` | 完整版 `group-evaluation.md` 的教授点评和汇总模板 |
+| 课后 | 学员包 + 方法论手册 + 本组任务卡 | 讲师内部控场材料 |
 
 ---
 

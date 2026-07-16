@@ -13,6 +13,10 @@
 | [讲师快速参考卡](../instructor-quickref.md) | 现场话术、常见问题、应急方案 |
 | [小组评价表（完整版）](../group-evaluation.md) | 教授评分、自评互评、汇总评分、点评建议 |
 | [课前调研问卷（完整版）](../pre-workshop-survey.md) | 含讲师用问卷结果解读指南 |
+| [OpenCode 与 Pi Agent 对比](../tool-comparison-opencode-pi.md) | 回答工具选型问题；Pi Agent 仅作进阶参考，不作为学生必装项 |
+| [讲师延伸阅读索引](reading-list.md) | 按教学环节索引 raw/ 中高价值素材；备课与课后深读用 |
+| [10-Step Collapse 翻车故事](../cases/agent-collapse-10-step.md) | 上午 Harness 段课堂故事，配 prompt-design-guide.md 第八节使用 |
+| [干线物流 6 个 Agent 实战](../cases/woshipm-logistics-harness.md) | 开场钩子，引出"你可能已经在做 Harness Engineering" |
 
 ---
 

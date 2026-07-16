@@ -269,33 +269,46 @@
 
 ---
 
+## 六之一、现场可讲的真实故事（备课速查）
+
+讲师常被学员问"有没有真实案例？"。两份案例可以直接讲，备课时先读一遍：
+
+| 案例 | 适合插入位置 | 一句话钩子 | 文件 |
+|------|--------------|------------|------|
+| 干线物流 6 个 Agent | 09:00-09:20 开场，引出"为什么需要 Harness" | "日均 2000+ 台车、6 个 Agent，把 Agent 关进笼子后异常响应从 45 分钟压到 8 分钟" | [`cases/woshipm-logistics-harness.md`](cases/woshipm-logistics-harness.md) |
+| 10-Step Collapse | 10:20-10:50 Harness 段收束 | "前 6 步都对，第 7 步开始幻觉，第 10 步整个 JSON 管道崩了——没有任何一步告诉它已经偏离了" | [`cases/agent-collapse-10-step.md`](cases/agent-collapse-10-step.md) |
+
+两份案例的共同收束句：**"Harness 不是让 Agent 不犯错，而是让它犯错时早被发现。"**
+
+---
+
 ## 七、工具操作速查
 
 ### 终端 Agent 课堂验证
 
 1. 终端执行其中一个：
    ```bash
-   claude --version
    opencode --version
+   claude --version
    ```
 2. 启动对应工具：
    ```bash
-   claude
-   # 或
    opencode
+   # 或
+   claude
    ```
 3. 发送：
    ```text
    请用一句话确认你已正常响应。
    ```
-4. 若无响应，优先检查：CC Switch 配置、API Key、Base URL、模型名、账号额度。
+4. 若无响应，优先检查：API Key、Base URL、模型名、账号额度。
 
 ### 项目规则文件
 
-Claude Code 常用 `CLAUDE.md`，OpenCode 常用 `AGENTS.md`。课堂统一讲”项目规则文件”，示例：
+OpenCode 常用 `AGENTS.md`，Claude Code 常用 `CLAUDE.md`。课堂统一讲“项目规则文件”，示例：
 
 ```markdown
-# CLAUDE.md
+# AGENTS.md
 
 ## 角色
 你是某投研/战略分析团队的资深分析师。
@@ -326,16 +339,16 @@ Claude Code 常用 `CLAUDE.md`，OpenCode 常用 `AGENTS.md`。课堂统一讲�
 
 > **模板变体**：`context-management.md` 提供了3个版本——金融投研版（适合S1-S4，禁忌=不给投资建议）、产业咨询版（适合S5-S8，禁忌=不给具体商业决策建议）、通用助理版（适合S9-S13，禁忌=不添加主观判断）。下午实战时提醒学员选择适配版本。
 
-### OpenCode 备用路径说明
+### Claude Code 路径说明
 
-适合无法使用 Claude Code 的学员，作为合规备用方案：
+适合已有 Claude Code 访问条件、网络稳定的老师或学员：
 
 ```bash
-opencode --version
-opencode
+claude --version
+claude
 ```
 
-强调：Claude Code 和 OpenCode 在本课核心工作流上差别不大；选择哪个工具，不影响 Prompt / Context / Harness 的学习目标。课堂推荐 Claude Code + CC Switch 统一配置。
+强调：Claude Code 和 OpenCode 在本课核心工作流上差别不大；选择哪个工具，不影响 Prompt / Context / Harness 的学习目标。
 
 ### MCP 概念
 

@@ -3,7 +3,7 @@
 .venv/
 node_modules/
 
-# PPT 流水线构建产物（可由 tools/ppt-pipeline 重新生成）
+# 构建产物
 outputs/
 projects/*/exports/
 projects/*/render/
